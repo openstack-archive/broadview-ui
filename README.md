@@ -8,38 +8,34 @@ components may be added as functionality is added to broadview-lib
 (https://github.com/openstack/broadview-lib) and to broadview-collector
 (https://github.com/openstack/broadview-collector).
 
+Screenshot
+==========
+
+[BST Thresholds Editor](doc/images/thresholds-editor.png)
+
 Devstack
 ========
 
-Devstack support for installing broadview-ui will be provided by the
-broadview-collector project, and is forthcoming. Devstack is the 
-supported way in which this project is installed. 
+Devstack support for installing broadview-ui is provided by the 
+broadview-collector project. Devstack is the supported way in which this 
+project is installed. 
 
-Until devstack support is added, follow the instructions outlined below.
+If you are not using broadview-collector, follow the instructions outlined 
+below.
 
 Installation Prerequisites
 ==========================
 
-If you are installing broadview-collector
------------------------------------------
-
-Instructions for installing broadview-collector via devstack can be found 
-in the readme file located at
-https://github.com/openstack/broadview-collector/devstack/README.txt
-
-Then follow the steps in Installation, below.
-
-If you are not installing broadview-collector
----------------------------------------------
-
 broadview-ui itself does not have a dependency on broadview-collector,
 but it does have a dependency on a component that is itself a dependency
 of broadview-collector: broadview-lib. So you will need to install 
-broadview-lib. To do so:
+broadview-lib on your host. To do so:
 
 * git clone https://github.com/openstack/broadview-lib.git
 * cd broadview-lib
 * sudo python setup.py install
+* sudo cp broadview_lib/tools/bv-bstctl.py /usr/local/bin
+* sudo chmod 755 /usr/local/bin/bv-bstctl.py
 
 Further details are available in the README.md file at 
 https://github.com/openstack/broadview-lib/README.md
@@ -47,12 +43,11 @@ https://github.com/openstack/broadview-lib/README.md
 Installation
 ============
 
-After you have broadview-lib installed (either via broadview-collector or
-directly installing broadview-lib), follow these steps:
+After you have broadview-lib installed, follow these steps:
 
 * git clone https://github.com/openstack/broadview-ui.git
 * cp _50_broadview.py /opt/stack/horizon/openstack_dashboard/enabled/
-* cp -r broadview /opt/stack/horizon/openstack_dashboard/panels
+* cp -r broadview /opt/stack/horizon/openstack_dashboard/dashboards
 
 Configuration
 =============
