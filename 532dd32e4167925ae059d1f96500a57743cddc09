@@ -1,0 +1,8 @@
+Code-Review+2: Volodymyr Samotiy <volodymyr.samotiy@axilera.com>
+Workflow+1: Syd Logan <syd.logan@broadcom.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 26 Oct 2016 07:01:04 +0000
+Reviewed-on: https://review.openstack.org/390482
+Project: openstack/broadview-ui
+Branch: refs/heads/master
